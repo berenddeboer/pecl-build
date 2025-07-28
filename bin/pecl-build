@@ -97,7 +97,7 @@ main() {
     ### main ###
 
     # create build base
-    pecl_url=http://pecl.php.net/get
+    pecl_url=https://pecl.php.net/get
     url=$pecl_url/$package
 
     tarball=$(curl -I $url 2>/dev/null |grep -i Content-disposition |cut -d'=' -f2 |tr -d \")
@@ -116,7 +116,7 @@ main() {
     info "creating build directory: $(green $build_dir)"
     run mkdir -p $build_dir
     if [ -e "$build_dir/$package_name" ];then
-        warn "removing exist old dir $build_dir/$package_name."
+        warn "removing existing old dir $build_dir/$package_name."
         run rm -rf $build_dir/$package_name
     fi
 
@@ -132,7 +132,7 @@ main() {
     run ./configure $configure_options
     run make
     if [ $is_skip_test ];then
-        warn "skip test mode. not run 'make test'"
+        warn "Skipping test mode. not running 'make test'"
     else
         run make test
     fi

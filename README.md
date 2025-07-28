@@ -80,6 +80,10 @@ install_pecl apcu
 
 ## ChangeLog
 
+### v0.2 2025/07/28
+
+Fix pecl url as https is now required.
+
 ### v0.1.1 2025/07/28
 
 Update docs.
